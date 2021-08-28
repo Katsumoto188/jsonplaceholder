@@ -1,9 +1,9 @@
-package com.demo.jsonplaceholder.model.domain;
+package com.demo.jsonplaceholder.model.domain.complete;
 
-import lombok.Builder;
-import lombok.Data;
 import com.demo.jsonplaceholder.model.DTO.AddressDTO;
 import com.demo.jsonplaceholder.model.DTO.CompanyDTO;
+import lombok.Builder;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,11 +11,11 @@ import java.util.List;
 
 @Data
 @Builder
-@Document(collection = "todo")
+@Document("complete_user")
 
-public class UserDomain {
+public class CompleteUserDomain {
     @Id
-    public Long id;
+    public String id;
     public String name;
     public String username;
     public String email;
@@ -24,7 +24,7 @@ public class UserDomain {
     public AddressDTO address;
     public CompanyDTO company;
 
-    public List<Long> posts;
-    public List<Long> albums;
-    public List<Long> todos;
+    public List<CompletePostDomain> posts;
+    public List<CompleteAlbumDomain> albums;
+    public List<CompleteTodoDomain> todos;
 }
